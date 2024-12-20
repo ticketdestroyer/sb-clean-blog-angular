@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { BlogService } from '@modules/blog/services';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 @Injectable()
-export class PostGuard implements CanActivate {
+export class PostGuard  {
     constructor(private blogService: BlogService) {}
     canActivate(_next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
         return this._canActivate(_next, state);
